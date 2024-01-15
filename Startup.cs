@@ -25,7 +25,7 @@ namespace _2001MicroService
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             // Add controllers and configure JSON serialization
-            services.AddControllers().AddNewtonsoftJson();
+            //services.AddControllers().AddNewtonsoftJson();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
