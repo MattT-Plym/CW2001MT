@@ -1,5 +1,4 @@
-﻿// ActivityController.cs
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +16,7 @@ namespace _2001MicroService.Controllers
             _context = context;
         }
 
-        // GET: api/Activity
+        // GET: api Activity
         [HttpGet]
         public IActionResult GetActivities()
         {
@@ -25,7 +24,7 @@ namespace _2001MicroService.Controllers
             return Ok(activities);
         }
 
-        // GET: api/Activity/5
+        // GET: api Activity
         [HttpGet("{id}")]
         public IActionResult GetActivity(int id)
         {
@@ -39,7 +38,7 @@ namespace _2001MicroService.Controllers
             return Ok(activity);
         }
 
-        // POST: api/Activity
+        // POST: api Activity
         [HttpPost]
         public IActionResult PostActivity(Activity activity)
         {
@@ -49,7 +48,7 @@ namespace _2001MicroService.Controllers
             return CreatedAtAction(nameof(GetActivity), new { id = activity.ActivityID }, activity);
         }
 
-        // PUT: api/Activity/5
+        // PUT: api Activity
         [HttpPut("{id}")]
         public IActionResult PutActivity(int id, Activity activity)
         {
@@ -64,7 +63,7 @@ namespace _2001MicroService.Controllers
             return NoContent();
         }
 
-        // DELETE: api/Activity/5
+        // DELETE: api Activity
         [HttpDelete("{id}")]
         public IActionResult DeleteActivity(int id)
         {
