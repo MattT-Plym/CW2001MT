@@ -1,0 +1,24 @@
+CREATE SCHEMA CW2;
+GO
+
+-- Create Activities table in CW2 schema
+CREATE TABLE CW2.Activities (
+    ActivityID INT IDENTITY(1,1) NOT NULL,
+    ActivityName VARCHAR(255) NOT NULL,
+    PRIMARY KEY (ActivityID)
+);
+
+
+-- Create Users table in CW2 schema
+CREATE TABLE CW2.Users (
+    UserID INT IDENTITY(1,1) NOT NULL,
+    ActivityID INT,
+    FName VARCHAR(255) NOT NULL,
+    LName VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    AbtMe VARCHAR(750),
+    Hgt INT,
+    Wgt INT,
+    PRIMARY KEY (UserID),
+    FOREIGN KEY (ActivityID) REFERENCES CW2.Activities(ActivityID)
+);
